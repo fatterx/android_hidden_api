@@ -1,19 +1,17 @@
 # android_hidden_api
 
-mock Android hidden system api, so that you can use it directly in your Android app
+## What
+
+this project we mock Android hidden system api, so that you can use it directly in your Android app
+
+## Why
 
 Technically, you can not use `ActivityThread.currentApplication()` method in your application,
 
 because Android Team removed `ActivityThread.class` and other classes / methods / fields annotated
-by
+by @hide when packing Android.jar. That's a very tricky way.
 
-@hide when packing Android.jar.
-
-That's a very tricky way.
-
-When you write `ActivityThread.currentApplication()` in your code,
-
-your IDE and compiler will complaint **"Can't find ActivityThread"**.
+When you write `ActivityThread.currentApplication()` in your code, your IDE and compiler will complaint **"Can't find ActivityThread"**.
 
 But, what if we still want to use?
 
@@ -23,6 +21,10 @@ so we just need a little trick to cheat on compiler.
 
 This project is the **little trick**.
 
+## How
+
+In simple words, we just reverse the Android Team work.
+
 We mock `ActivityThread.class` and associates as a general 3rd-party library.
 
 The **key point** is to add this dependency by **compileOnly**.
@@ -31,13 +33,16 @@ The **key point** is to add this dependency by **compileOnly**.
 
 the compiler will not search those in classpath any more.
 
-``
-dependencies { compileOnly "me.lwn.library.hiddenapi:system:0.0.1"
+```
+dependencies { 
+
+        compileOnly "me.lwn.library.hiddenapi:system:0.0.1"
 
         // DO NOT ADD THIS DEPENDENCY LIKE THIS
         // api "me.lwn.library.hiddenapi:system:0.0.1"
         // implementation "me.lwn.library.hiddenapi:system:0.0.1"
         // runtimeOnly "me.lwn.library.hiddenapi:system:0.0.1"
+        
     }
 
-``
+```
