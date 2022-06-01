@@ -36,12 +36,12 @@ the compiler will not search those in classpath any more.
 ```
 dependencies { 
 
-        compileOnly "me.lwn.library.hiddenapi:system:0.0.1"
+        compileOnly "com.github.fatterx:android_hidden_api:0.0.1"
 
         // DO NOT ADD THIS DEPENDENCY LIKE THIS
-        // api "me.lwn.library.hiddenapi:system:0.0.1"
-        // implementation "me.lwn.library.hiddenapi:system:0.0.1"
-        // runtimeOnly "me.lwn.library.hiddenapi:system:0.0.1"
+        // api "com.github.fatterx:android_hidden_api:0.0.1"
+        // implementation "com.github.fatterx:android_hidden_api:0.0.1"
+        // runtimeOnly "com.github.fatterx:android_hidden_api:0.0.1"
         
     }
 
