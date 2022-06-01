@@ -34,11 +34,26 @@ The **key point** is to add this dependency by **compileOnly**.
 the compiler will not search those in classpath any more.
 
 ```
+
+// add jitpack repo
+repositories {
+        maven {
+            url 'https://jitpack.io'
+        }
+ }
+...
+
+
+// add dependency
+
 dependencies { 
 
         compileOnly "com.github.fatterx:android_hidden_api:0.0.1"
+        
+        
 
         // DO NOT ADD THIS DEPENDENCY LIKE THIS
+        
         // api "com.github.fatterx:android_hidden_api:0.0.1"
         // implementation "com.github.fatterx:android_hidden_api:0.0.1"
         // runtimeOnly "com.github.fatterx:android_hidden_api:0.0.1"
@@ -46,3 +61,9 @@ dependencies {
     }
 
 ```
+
+e.g.
+
+Android Global Context
+
+[https://github.com/fatterx/android_global_context](https://github.com/fatterx/android_global_context)
