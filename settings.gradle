@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 rootProject.name = "AndroidHiddenApi"
 include ':android.app'
 include ':hiddenapi'
+include ':android_half_hidden'
