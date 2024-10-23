@@ -7,6 +7,9 @@ import android.os.Parcelable;
  * Created by fatter on 2024/10/17
  */
 public class ClientWindowFrames implements Parcelable {
+    public ClientWindowFrames() {
+    }
+
     protected ClientWindowFrames(Parcel in) {
     }
 

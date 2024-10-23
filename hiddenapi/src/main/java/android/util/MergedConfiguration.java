@@ -7,6 +7,11 @@ import android.os.Parcelable;
  * Created by fatter on 2024/10/17
  */
 public class MergedConfiguration implements Parcelable {
+
+    public MergedConfiguration() {
+
+    }
+
     protected MergedConfiguration(Parcel in) {
     }
 
