@@ -6,6 +6,7 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.ParcelFileDescriptor;
 import android.util.MergedConfiguration;
+import android.view.inputmethod.ImeTracker;
 import android.window.ClientWindowFrames;
 import android.graphics.Rect;
 import android.graphics.Point;
@@ -28,7 +29,9 @@ public interface IWindow extends IInterface {
                  int syncSeqId, boolean dragResizing);
     void insetsControlChanged(InsetsState insetsState, InsetsSourceControl[] activeControls);
     void showInsets(int types, boolean fromIme);
+    void showInsets(int types, boolean fromIme, ImeTracker.Token statsToken);
     void hideInsets(int types, boolean fromIme);
+    void hideInsets(int types, boolean fromIme, ImeTracker.Token statsToken);
     void moved(int newX, int newY);
     void dispatchAppVisibility(boolean visible);
     void dispatchGetNewSurface();
