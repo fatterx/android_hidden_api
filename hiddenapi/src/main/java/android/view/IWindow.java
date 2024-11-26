@@ -45,6 +45,9 @@ public interface IWindow extends IInterface {
     void requestAppKeyboardShortcuts(IResultReceiver receiver, int deviceId);
     void requestScrollCapture(IScrollCaptureResponseListener callbacks);
 
+    // for vivo api 34 only
+    void dispatchFreeFormScale(float scale);
+
     /**
      * Android 13
      */
@@ -52,6 +55,12 @@ public interface IWindow extends IInterface {
                  MergedConfiguration newMergedConfiguration, InsetsState insetsState,
                  boolean forceLayout, boolean alwaysConsumeSystemBars, int displayId,
                  int syncSeqId, int resizeMode);
+
+    // for motorola api 33 only
+    void windowScaleChanged(float scale);
+
+    // for INFINIX api 33 only
+    void dispatchCaptionViewStatus(boolean caption, int status);
 
     /**
      * Android 12
@@ -95,6 +104,8 @@ public interface IWindow extends IInterface {
 
     void dispatchWallpaperOffsets(float x, float y, float xStep, float yStep, boolean sync);
 
+    // for LGE api 29 only
+    void dispatchDetachChildren();
 
     /**
      * Android 9
